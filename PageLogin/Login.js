@@ -2,7 +2,8 @@ import { Text, View, StyleSheet, TextInput } from "react-native";
 import Bg from "./Bg";
 import BtnLogin from "./BtnLogin";
 
-export default function Login(props) {
+
+export default function Login(Props) {
     return (
         <Bg>
             <View style={{ marginHorizontal: 50, marginVertical: 100 }}>
@@ -14,10 +15,12 @@ export default function Login(props) {
                 <TextInput
                     style={style.InputUsername}
                     placeholder="Email"
+                    keyboardType="email-address"
                 />
                 <TextInput
                     style={style.InputPass}
                     placeholder="Password"
+                    secureTextEntry={true}
                 />
                 <Text
                     style={{ color: 'white', marginBottom: 20, }} >
@@ -26,7 +29,8 @@ export default function Login(props) {
                 <BtnLogin
                     bgColor="rgba(0,0,0,0.6)"
                     textColor="white"
-                    btnLabel="Sign In"
+                    btnLabel="Login"
+                    Press={() => Props.navigation.navigate('Dashboard')}
                     wBtn={250}
                 />
             </View>
